@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luffy and the gang</title>
+    <style>
+        body {
+            font-family: "Avenir", sans-serif;
+        }
+        table{
+            width: 500px;
+        }
+        th,td {
+            padding : 10px;
+        }
+        thead {
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ships and Pirates List</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia odit in similique obcaecati fugiat cupiditate soluta dolore dignissimos, sed ipsa illo recusandae quasi, sit, eaque minima! Accusamus beatae eius ullam.</p>
+
+    <a href='/'>Home</a>
+    <a href='/ships'>Ship</a>
+    <a href='/ships/add'>Add Ship</a>
+    <a href='/pirates'>Pirate</a>
+    <a href='/pirates/add'>Add Pirate</a>
+    
+    <h2>Ships Page</h2>
+    <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Power</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% ships.forEach(ship => { %>
+                <tr>
+                    <td><%= ship.id %></td>
+                    <td><%= ship.name %></td>
+                    <td><%= ship.type %></td>
+                    <td><%= ship.power %></td>
+                    <td><a href="ships/delete/ <%= ship.id %>">Delete</a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
